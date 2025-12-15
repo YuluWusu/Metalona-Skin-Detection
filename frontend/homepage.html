@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chẩn đoán ung thư da online bằng hình ảnh với AI. Sử dụng công nghệ YOLO Classification và bộ dữ liệu ISIC 2019.">
+    <meta name="keywords" content="chẩn đoán ung thư da, kiểm tra da online, AI y tế, da liễu">
+    <title>Chẩn Đoán Ung Thư Da Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="detection.css">
+    <link rel="icon" type="image/x-icon" href="Logo HUIT-01.ico">
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <h1><a class="logo" href="#">Phi Long</a></h1>
+            <ul>
+                <li><a class="navtext" href="#">Trang chủ</a></li>
+                <li><a class="navtext" href="#">Dịch vụ</a></li>
+                <li><a class="navtext" href="#">Thông tin</a></li>
+                <li><a class="navtext" href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container">
+        <p class="title">CHẨN ĐOÁN BỆNH UNG THƯ DA BẰNG HÌNH ẢNH</p>
+        <p class="subtitle">
+            Trang Web là công cụ giúp người dùng chẩn đoán bệnh ung thư da hoặc chẩn đoán các vấn đề về các vết thương tổn trên da bằng cách sử dụng hình ảnh được đăng tải/ chụp lên trang Web. Với mô hình trí tuệ nhân tạo được xây dựng dựa trên <span class="highlight">YOLO Classification</span> và được huấn luyện dựa trên bộ dữ liệu <span class="highlight">ISIC 2019</span>, một bộ dữ liệu đáng tin cậy được tin dùng trên toàn thế giới và các cuộc thi về thị giác máy tính. Tôi đã ứng dụng chúng và tạo nên trang Web giúp cho mọi người an tâm hơn hoặc biết rõ bệnh lý của bản thân mà không cần phải đi bác sĩ hay bệnh viện.
+        </p>
+        
+        <div class="minicontainer">
+            <div class="input" id="inputArea">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Đang xử lý ảnh...</p>
+                </div>
+                <div class="input-content" id="inputContent">
+                    <i class="icon fa-solid fa-arrow-up-from-bracket" style="font-size: 60px; color: #666;"></i>
+                    <p style="font-size:20px; margin-bottom: 5px;">Kéo thả ảnh vào đây</p>
+                    <p style="font-size:17px; margin-top: 0px; color: #888;">- hoặc -</p>
+                    <p style="font-size:20px; margin-top: 0px; color: #0066cc;">Nhấn vào đây để chọn ảnh</p>
+                </div>
+                <img class="input-image" id="inputImage" alt="Ảnh đã tải lên">
+                <div class="image-controls" id="inputControls" style="display: none;">
+                    <i class="fa-solid fa-expand"></i> Ảnh đã tải
+                </div>
+            </div>
+            
+            <div class="output" id="outputArea">
+                <div class="output-placeholder" id="outputPlaceholder">
+                    <p style="font-size:25px; text-align: center; line-height: 34px; color: #666;">
+                        Kết quả chẩn đoán sẽ <br>được hiển thị tại đây
+                    </p>
+                </div>
+                <img class="output-image" id="outputImage" alt="Ảnh đang chẩn đoán">
+                <div class="image-controls" id="outputControls" style="display: none;">
+                    <i class="fa-solid fa-stethoscope"></i> Đang chẩn đoán
+                </div>
+            </div>
+        </div>
+        
+        <div class="file-info" id="fileInfo"></div>
+        
+        <div class="minicontainer2">
+            <button class="btn chandoan" id="diagnoseBtn" aria-label="Bắt đầu chẩn đoán" disabled>BẮT ĐẦU CHẨN ĐOÁN</button>
+            <button class="btn huy" id="cancelBtn" aria-label="Huỷ và xoá ảnh" disabled>HUỶ VÀ TẢI LẠI</button>
+        </div>
+        
+        <p class="disclaimer">
+            * Lưu ý: Kết quả chẩn đoán chỉ mang tính chất tham khảo. Vui lòng tham khảo ý kiến bác sĩ chuyên khoa để có chẩn đoán chính xác.
+        </p>
+        
+        <div class="minicontainer3">
+            <h2>THÔNG TIN CHẨN ĐOÁN</h2>
+            <div id="result-content">
+                <p style="color: #888;">Kết quả sẽ hiển thị tại đây sau khi chẩn đoán</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2025 Phi Long - Chẩn đoán ung thư da bằng AI</p>
+        <p>Đây là dự án nghiên cứu, không thay thế chẩn đoán của bác sĩ</p>
+    </div>
+    <script src="detection.js"></script>
+</body>
+</html>
